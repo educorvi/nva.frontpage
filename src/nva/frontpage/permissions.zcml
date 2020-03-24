@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="nva.frontpage.AddJumbotron"
+        title="nva.frontpage: Add Jumbotron"
+    />
+
+
+    <permission
         id="nva.frontpage.AddCard"
         title="nva.frontpage: Add Card"
     />
