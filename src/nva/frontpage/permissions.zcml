@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="nva.frontpage.AddTextbox"
+        title="nva.frontpage: Add Textbox"
+    />
+
+
+    <permission
         id="nva.frontpage.AddJumbotron"
         title="nva.frontpage: Add Jumbotron"
     />
