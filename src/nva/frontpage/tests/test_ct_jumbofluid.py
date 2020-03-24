@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from nva.frontpage.content.jumbofluid import IJumbofluid  # NOQA E501
 from nva.frontpage.testing import NVA_FRONTPAGE_INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.app.testing import setRoles
@@ -10,11 +11,6 @@ from zope.component import queryUtility
 import unittest
 
 
-try:
-    from plone.dexterity.schema import portalTypeToSchemaName
-except ImportError:
-    # Plone < 5
-    from plone.dexterity.utils import portalTypeToSchemaName
 
 
 class JumbofluidIntegrationTest(unittest.TestCase):
@@ -30,8 +26,7 @@ class JumbofluidIntegrationTest(unittest.TestCase):
     def test_ct_jumbofluid_schema(self):
         fti = queryUtility(IDexterityFTI, name='Jumbofluid')
         schema = fti.lookupSchema()
-        schema_name = portalTypeToSchemaName('Jumbofluid')
-        self.assertEqual(schema_name, schema.getName())
+        self.assertEqual(IJumbofluid, schema)
 
     def test_ct_jumbofluid_fti(self):
         fti = queryUtility(IDexterityFTI, name='Jumbofluid')
@@ -42,6 +37,12 @@ class JumbofluidIntegrationTest(unittest.TestCase):
         factory = fti.factory
         obj = createObject(factory)
 
+        self.assertTrue(
+            IJumbofluid.providedBy(obj),
+            u'IJumbofluid not provided by {0}!'.format(
+                obj,
+            ),
+        )
 
     def test_ct_jumbofluid_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
@@ -51,6 +52,12 @@ class JumbofluidIntegrationTest(unittest.TestCase):
             id='jumbofluid',
         )
 
+        self.assertTrue(
+            IJumbofluid.providedBy(obj),
+            u'IJumbofluid not provided by {0}!'.format(
+                obj.id,
+            ),
+        )
 
         parent = obj.__parent__
         self.assertIn('jumbofluid', parent.objectIds())
@@ -65,25 +72,4 @@ class JumbofluidIntegrationTest(unittest.TestCase):
         self.assertTrue(
             fti.global_allow,
             u'{0} is not globally addable!'.format(fti.id)
-        )
-
-    def test_ct_jumbofluid_filter_content_type_false(self):
-        setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        fti = queryUtility(IDexterityFTI, name='Jumbofluid')
-        portal_types = self.portal.portal_types
-        parent_id = portal_types.constructContent(
-            fti.id,
-            self.portal,
-            'jumbofluid_id',
-            title='Jumbofluid container',
-         )
-        self.parent = self.portal[parent_id]
-        obj = api.content.create(
-            container=self.parent,
-            type='Document',
-            title='My Content',
-        )
-        self.assertTrue(
-            obj,
-            u'Cannot add {0} to {1} container!'.format(obj.id, fti.id)
         )
