@@ -5,4 +5,5 @@
   <object meta_type="Dexterity FTI" name="Landingpage"/>
   <object meta_type="Dexterity FTI" name="Card"/>
   <object meta_type="Dexterity FTI" name="jumbotron"/>
+  <object meta_type="Dexterity FTI" name="textbox"/>
 </object>
