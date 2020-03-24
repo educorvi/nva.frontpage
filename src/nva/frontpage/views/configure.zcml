@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="jumbofluid-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".jumbofluid_view.JumbofluidView"
+    template="jumbofluid_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="view"
     for="nva.frontpage.content.landingpage.ILandingpage"
     class=".landing_view.LandingView"
