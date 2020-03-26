@@ -25,7 +25,14 @@ class RightimageIntegrationTest(unittest.TestCase):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.parent = self.portal
+        portal_types = self.portal.portal_types
+        parent_id = portal_types.constructContent(
+            'rightimage',
+            self.portal,
+            'parent_container',
+            title='Parent container',
+        )
+        self.parent = self.portal[parent_id]
 
     def test_ct_rightimage_schema(self):
         fti = queryUtility(IDexterityFTI, name='rightimage')
@@ -46,7 +53,7 @@ class RightimageIntegrationTest(unittest.TestCase):
     def test_ct_rightimage_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
         obj = api.content.create(
-            container=self.portal,
+            container=self.parent,
             type='rightimage',
             id='rightimage',
         )
@@ -59,10 +66,10 @@ class RightimageIntegrationTest(unittest.TestCase):
         api.content.delete(obj=obj)
         self.assertNotIn('rightimage', parent.objectIds())
 
-    def test_ct_rightimage_globally_addable(self):
+    def test_ct_rightimage_globally_not_addable(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
         fti = queryUtility(IDexterityFTI, name='rightimage')
-        self.assertTrue(
+        self.assertFalse(
             fti.global_allow,
-            u'{0} is not globally addable!'.format(fti.id)
+            u'{0} is globally addable!'.format(fti.id)
         )
