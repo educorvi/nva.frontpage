@@ -8,11 +8,12 @@
 
   <browser:page
     name="rightimage-view"
-    for="*"
+    for="Products.CMFCore.interfaces.IFolderish"
     class=".rightimage_view.RightimageView"
     template="rightimage_view.pt"
     permission="zope2.View"
     />
+
 
   <browser:page
     name="jumbofluid-view"
