@@ -8,7 +8,7 @@
 
   <browser:page
     name="jumbotronview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".jumbotronview.Jumbotronview"
     template="jumbotronview.pt"
     permission="zope2.View"

@@ -2,12 +2,42 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="nva.frontpage"
+      i18n:domain="krks.d3print"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="display-4" tal:content="context/title"/>
+  <p class="lead" tal:content="context/description"/>
+  <hr class="my-4">
+  <p tal:content="view/textfield"/>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+<!--
+   <div class="row" tal:define="gcodes view/get_gcodes" tal:condition="gcodes">
+    <div class="col-12">
+       <h2>Druckbare Modelle</h2>
+       <ul class="list-group">
+         <li tal:repeat="modell gcodes" class="list-group-item">
+           <img src="" tal:attributes="src modell/vorschaubild">
+           <a href="" tal:attributes="href modell/url">
+           <span tal:content="modell/title"/>
+           </a>
+         </li>
+       </ul>
+    </div>
+   </div>
+-->
+
+    
+    </div> <!--Container-->
+    </tal:main-macro>
+</metal:main>
+
 </body>
 </html>

@@ -11,7 +11,14 @@ class Jumbotronview(BrowserView):
     # the configure.zcml registration of this view.
     # template = ViewPageTemplateFile('jumbotronview.pt')
 
-    def __call__(self):
-        # Implement your own actions:
-        self.msg = _(u'A small message')
-        return self.index()
+    def textfield(self):
+        textfield = self.context.textfield
+        return textfield
+
+    def buttontitle(self):
+        buttontitle = self.context.buttontitle
+        return buttontitle
+
+    def link(self):
+        link = self.context.link
+        return link
