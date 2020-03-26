@@ -16,6 +16,11 @@ from zope.interface import implementer
 class ITextbox(model.Schema):
     """ Marker interface and Dexterity Python Schema for Textbox
     """
+
+    fontcolor = schema.TextLine(title="Schriftfarbe")
+    bordercolor = schema.TextLine(title="BorderColor")
+    backgroundcolor = schema.TextLine(title="BackgroundColor")
+
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
 
