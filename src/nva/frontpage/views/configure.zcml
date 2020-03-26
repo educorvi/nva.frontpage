@@ -8,7 +8,7 @@
 
   <browser:page
     name="jumbofluid-view"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".jumbofluid_view.JumbofluidView"
     template="jumbofluid_view.pt"
     permission="zope2.View"

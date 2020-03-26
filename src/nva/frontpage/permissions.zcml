@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="nva.frontpage.AddRightimage"
+        title="nva.frontpage: Add Rightimage"
+    />
+
+
+    <permission
         id="nva.frontpage.AddJumbofluid"
         title="nva.frontpage: Add Jumbofluid"
     />
