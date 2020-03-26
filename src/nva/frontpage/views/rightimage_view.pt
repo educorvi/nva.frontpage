@@ -8,7 +8,7 @@
   <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
       <div class=container">
-
+        -
       </div>
     </tal:main-macro>
   </metal:main>

@@ -10,7 +10,7 @@
       name="title">rightimage</property>
   <property
       i18n:translate=""
-      name="description">"Hier ist dein rechtsbündiges Bild zu sehen"</property>
+      name="description">"Hier sehen Sie ein rechtbündiges Bild"</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">rightimage</property>
