@@ -8,7 +8,7 @@
 
   <browser:page
     name="rightimage-view"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".rightimage_view.RightimageView"
     template="rightimage_view.pt"
     permission="zope2.View"

@@ -10,7 +10,7 @@
       name="title">rightimage</property>
   <property
       i18n:translate=""
-      name="description">"Dieser Contet kreiert ein Bild rechts zentriert"</property>
+      name="description">"Hier ist dein rechtsbündiges Bild zu sehen"</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">rightimage</property>
