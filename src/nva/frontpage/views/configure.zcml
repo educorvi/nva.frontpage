@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="textfieldview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".textfieldview.Textfieldview"
+    template="textfieldview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="jumbotronview"
     for="*"
     class=".jumbotronview.Jumbotronview"
