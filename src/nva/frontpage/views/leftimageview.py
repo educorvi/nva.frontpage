@@ -11,7 +11,28 @@ class Leftimageview(BrowserView):
     # the configure.zcml registration of this view.
     # template = ViewPageTemplateFile('leftimageview.pt')
 
-    def __call__(self):
-        # Implement your own actions:
-        self.msg = _(u'A small message')
-        return self.index()
+
+
+    def kategorie(self):
+        kategorie = self.context.kategorie
+        return kategorie
+
+    def bild(self):
+        url = ''
+        bild = self.context.bild
+        if bild:
+            url = '%s/@@images/bild/large' %self.context.absolute_url()
+            #url = self.context.absolute_url()+'/@@images/druckerbild'
+        return url 
+
+
+
+    def buttontitle(self):
+        buttontitle = self.context.buttontitle
+        return buttontitle
+
+
+
+    def link(self):
+        link = self.context.link
+        return link
