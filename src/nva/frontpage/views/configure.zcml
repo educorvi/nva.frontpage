@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="leftimageview"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".leftimageview.Leftimageview"
+    template="leftimageview.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="textfieldview"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".textfieldview.Textfieldview"
