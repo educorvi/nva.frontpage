@@ -34,18 +34,18 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***************************************************************
 
-Scenario: As a site administrator I can add a rightimage
+Scenario: As a site administrator I can add a Rightimage
   Given a logged-in site administrator
-    and an add rightimage form
-   When I type 'My rightimage' into the title field
+    and an add Landingpage form
+   When I type 'My Rightimage' into the title field
     and I submit the form
-   Then a rightimage with the title 'My rightimage' has been created
+   Then a Rightimage with the title 'My Rightimage' has been created
 
-Scenario: As a site administrator I can view a rightimage
+Scenario: As a site administrator I can view a Rightimage
   Given a logged-in site administrator
-    and a rightimage 'My rightimage'
-   When I go to the rightimage view
-   Then I can see the rightimage title 'My rightimage'
+    and a Rightimage 'My Rightimage'
+   When I go to the Rightimage view
+   Then I can see the Rightimage title 'My Rightimage'
 
 
 *** Keywords *****************************************************************
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a rightimage
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add rightimage form
-  Go To  ${PLONE_URL}/++add++rightimage
+an add Landingpage form
+  Go To  ${PLONE_URL}/++add++Landingpage
 
-a rightimage 'My rightimage'
-  Create content  type=rightimage  id=my-rightimage  title=My rightimage
+a Rightimage 'My Rightimage'
+  Create content  type=Landingpage  id=my-rightimage  title=My Rightimage
 
 # --- WHEN -------------------------------------------------------------------
 
@@ -69,18 +69,18 @@ I type '${title}' into the title field
 I submit the form
   Click Button  Save
 
-I go to the rightimage view
+I go to the Rightimage view
   Go To  ${PLONE_URL}/my-rightimage
   Wait until page contains  Site Map
 
 
 # --- THEN -------------------------------------------------------------------
 
-a rightimage with the title '${title}' has been created
+a Rightimage with the title '${title}' has been created
   Wait until page contains  Site Map
   Page should contain  ${title}
   Page should contain  Item created
 
-I can see the rightimage title '${title}'
+I can see the Rightimage title '${title}'
   Wait until page contains  Site Map
   Page should contain  ${title}

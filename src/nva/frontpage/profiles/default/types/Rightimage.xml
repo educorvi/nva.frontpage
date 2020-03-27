@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Leftimage"
+    name="Rightimage"
     meta_type="Dexterity FTI"
     i18n:domain="nva.frontpage">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Leftimage</property>
+      name="title">Rightimage</property>
   <property
       i18n:translate=""
-      name="description">hier finden sie eine links...</property>
+      name="description">Hier finden Sie einrechtsbuendiges Bild</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Leftimage</property>
+  <property name="factory">Rightimage</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
   <property name="global_allow">False</property>
   <!-- Schema, class and security -->
-  <property name="add_permission">nva.frontpage.AddLeftimage</property>
-  <property name="klass">nva.frontpage.content.leftimage.Leftimage</property>
+  <property name="add_permission">nva.frontpage.AddRightimage</property>
+  <property name="klass">nva.frontpage.content.rightimage.Rightimage</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">nva.frontpage.content.leftimage.ILeftimage</property>
+  <property name="schema">nva.frontpage.content.rightimage.IRightimage</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -50,7 +50,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Leftimage</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Rightimage</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>

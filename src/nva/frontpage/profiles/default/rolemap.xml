@@ -3,20 +3,13 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
-    <permission name="nva.frontpage: Add Leftimage" acquire="True">
-      <role name="Manager"/>
-      <role name="Site Administrator"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
-    </permission>
-
-
     <permission name="nva.frontpage: Add Rightimage" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
+
 
 
     <permission name="nva.frontpage: Add Jumbofluid" acquire="True">
