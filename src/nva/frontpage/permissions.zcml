@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="nva.frontpage.AddLeftimage"
+        title="nva.frontpage: Add Leftimage"
+    />
+
+
+    <permission
         id="nva.frontpage.AddRightimage"
         title="nva.frontpage: Add Rightimage"
     />

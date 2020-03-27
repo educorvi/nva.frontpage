@@ -6,4 +6,5 @@
   <object meta_type="Dexterity FTI" name="Card"/>
   <object meta_type="Dexterity FTI" name="Jumbofluid"/>
   <object meta_type="Dexterity FTI" name="rightimage"/>
+  <object meta_type="Dexterity FTI" name="Leftimage"/>
 </object>
