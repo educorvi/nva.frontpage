@@ -6,14 +6,6 @@
 
   -*- extra stuff goes here -*-
 
-  <browser:page
-    name="rightimage-view"
-    for="Products.CMFCore.interfaces.IFolderish"
-    class=".rightimage_view.RightimageView"
-    template="rightimage_view.pt"
-    permission="zope2.View"
-    />
-
 
   <browser:page
     name="jumbofluid-view"
