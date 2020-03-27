@@ -15,7 +15,7 @@
   <p class="lead" tal:content="context/description"/>
   <hr class="my-4">
   <p tal:content="view/textfield"/>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  <a class="btn btn-primary btn-lg" tal:content="view/buttontitle" tal:attributes="href view/link" role="button"/>
 </div>
 
 <!--
