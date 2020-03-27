@@ -19,7 +19,11 @@ class ILeftimage(model.Schema):
     """ Marker interface and Dexterity Python Schema for Leftimage
     """
 
+    kategorie = schema.TextLine(title="Kategorie / kleine Überschrift")
     bild = NamedBlobImage(title="Bild")
+
+    buttontitle = schema.TextLine(title="Buttonname", required=False)
+    link = schema.TextLine(title="Link", required=False)
 
     fontcolor = schema.TextLine(title="Schriftfarbe")
     bordercolor = schema.TextLine(title="BorderColor")
