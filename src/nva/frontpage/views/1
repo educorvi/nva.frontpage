@@ -22,9 +22,6 @@
         </div>
         <div class="col-12 col-md-6">
           <h5 tal:content="view/kategorie"/>
-          <h3 tal:content="context/title"/>
-          <p tal:content="context/description"/>
-          <a class="btn btn-primary btn-lg" tal:content="view/buttontitle" tal:attributes="href view/link" role="button"/>
         </div>
       </div>
 

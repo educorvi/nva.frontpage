@@ -8,7 +8,7 @@
 
   <browser:page
     name="leftimageview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".leftimageview.Leftimageview"
     template="leftimageview.pt"
     permission="zope2.View"
@@ -16,7 +16,7 @@
 
   <browser:page
     name="textfieldview"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="*"
     class=".textfieldview.Textfieldview"
     template="textfieldview.pt"
     permission="zope2.View"
